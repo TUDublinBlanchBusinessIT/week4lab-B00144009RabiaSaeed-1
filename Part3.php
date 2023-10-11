@@ -24,11 +24,11 @@ $sql = "INSERT INTO member (firstname, surname) VALUES ('john', 'doe')";
 //no way i wrote members instead of member, that was my bad because I didn't notice the s//
 $sql = "SELECT id, firstname, surname FROM member";
 //I changed the names, it still works. I tried to change mysqli_num_rows and mysqli_fetch_assoc but apparently it doesn't work//
-$resultonscreen = mysqli_query($conn, $sql);
+$resultOfuser = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($resultonscreen) > 0) {
+if (mysqli_num_rows($resultOfuser) > 0) {
   //so over here it's going to output the data onto the locl host
-  while($row = mysqli_fetch_assoc($resultonscreen)) {
+  while($row = mysqli_fetch_assoc($resultOfuser)) {
     echo "ID: " . $row["id"]. " - Name of User: " . $row["firstname"]. " " . $row["surname"]. "<br>";
   }
 } else {

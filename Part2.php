@@ -26,10 +26,10 @@ if (!$conn) {
 
 //uh oh I had forgotten to put the dollar sign and underscore for POST//
 //no way i forget the ; at the end for these, it kept saying parse error//
-$firstName = $_POST["firstname"];
-$secondName = $_POST["surname"];
+$UserfirstName = $_POST["firstname"];
+$UsersecondName = $_POST["surname"];
 
-$sql = "INSERT INTO member (firstname, surname) VALUES ('$firstName', '$secondName')";
+$sql = "INSERT INTO member (firstname, surname) VALUES ('$UserfirstName', '$UsersecondName')";
 
 
 mysqli_query($conn, $sql);
