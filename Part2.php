@@ -1,5 +1,5 @@
 <?php
-//Give the name of the program here
+//Give the name of the program here 
 //Include your name and the date here
 //Give a brief description of what the program does
 $servername = "localhost";
