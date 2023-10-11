@@ -21,13 +21,15 @@ if (!$conn) {
 
 $sql = "INSERT INTO member (firstname, surname) VALUES ('john', 'doe')";
 
-$sql = "SELECT id, firstname, lastname FROM members";
-$result = mysqli_query($conn, $sql);
+//no way i wrote members instead of member, that was my bad because I didn't notice the s//
+$sql = "SELECT id, firstname, surname FROM member";
+//I changed the names, it still works. I tried to change mysqli_num_rows and mysqli_fetch_assoc but apparently it doesn't work//
+$resultonscreen = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["surname"]. "<br>";
+if (mysqli_num_rows($resultonscreen) > 0) {
+  //so over here it's going to output the data onto the locl host
+  while($row = mysqli_fetch_assoc($resultonscreen)) {
+    echo "ID: " . $row["id"]. " - Name of User: " . $row["firstname"]. " " . $row["surname"]. "<br>";
   }
 } else {
   echo "0 results";
