@@ -21,6 +21,18 @@ if (!$conn) {
 
 $sql = "INSERT INTO member (firstname, surname) VALUES ('john', 'doe')";
 
+$sql = "SELECT id, firstname, lastname FROM members";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["surname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
 mysqli_query($conn, $sql);
 
 mysqli_close($conn);
