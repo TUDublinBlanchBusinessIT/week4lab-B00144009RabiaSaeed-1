@@ -4,7 +4,7 @@
 //Give a brief description of what the program does
 $servername = "localhost";
 $username = "user";
-$password = "pass";
+$password = "";
 $dbname = "database";
 $port = 3307;
 
